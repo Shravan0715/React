@@ -1,0 +1,126 @@
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-logo h1 {
+  margin: 0;
+  color: #333;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.login-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.register-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.login-submit-btn {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem;
+  margin-top: 1rem;
+}
+
+.login-submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.login-form p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.login-form a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
