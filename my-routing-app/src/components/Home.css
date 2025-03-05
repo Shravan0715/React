@@ -1,0 +1,90 @@
+
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: white;
+}
+
+.nav-logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.nav-link:hover {
+  color: #ddd;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: white;
+  color: #333;
+}
+
+.register-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+.register-btn:hover {
+  background-color: #45a049;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.main-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.main-content p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+}
