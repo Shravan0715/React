@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -15,7 +16,9 @@ function SignUp() {
       setError("Passwords do not match.");
     } else {
       setError("");
-      alert("Account Created! (Authentication not implemented yet)");
+      localStorage.setItem('userData', JSON.stringify({ email, password }));
+      alert("Account Created Successfully!");
+      navigate('/');
     }
   };
 
@@ -47,5 +50,4 @@ function SignUp() {
     </div>
   );
 }
-
 export default SignUp;

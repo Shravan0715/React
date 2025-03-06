@@ -1,25 +1,71 @@
 import React, { useState } from "react";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
     if (!email || !password) {
       setError("Please enter all fields.");
-    } else {
-      setError("");
-      alert("Login successful! (Authentication not implemented yet)");
+      return;
     }
+  
+    const users = JSON.parse(localStorage.getItem("userData"));
+  
+    if (users && users.email === email && users.password === password) {
+      setError("");
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("email", email);
+      navigate("/products");
+    } else {
+      setError("Invalid email or password");
+    }
+ 
   };
-
-  const handleSocialLogin = (provider) => {
-    alert(`Logging in with ${provider} (Implement authentication later)`);
+  
+  const handleSocialLogin = async (provider) => {
+    try {
+      // Example authentication implementation
+      switch (provider) {
+        case "Google":
+          // Implement Google OAuth authentication
+          // Example: const result = await signInWithGoogle();
+          localStorage.setItem("email", "google@example.com");
+          localStorage.setItem("provider", "Google");
+          localStorage.setItem("isLoggedIn", "true");
+          navigate("/productlist");
+          break;
+          
+        case "Facebook":
+          // Implement Facebook OAuth authentication
+          // Example: const result = await signInWithFacebook();
+          localStorage.setItem("email", "facebook@example.com");
+          localStorage.setItem("provider", "Facebook");
+          localStorage.setItem("isLoggedIn", "true");
+          navigate("/productlist");
+          break;
+          
+        case "GitHub":
+          // Implement GitHub OAuth authentication
+          // Example: const result = await signInWithGithub();
+          localStorage.setItem("email", "github@example.com");
+          localStorage.setItem("provider", "GitHub");
+          localStorage.setItem("isLoggedIn", "true");
+          navigate("/productlist");
+          break;
+          
+        default:
+          setError("Invalid provider");
+      }
+    } catch (error) {
+      setError(error.message || "Failed to authenticate");
+    }
   };
 
   return (
