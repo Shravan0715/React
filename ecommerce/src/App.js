@@ -1,14 +1,24 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Login from "./components/Login";
-import ProductList from "./components/PoductList";
-import Cart from "./components/Cart";
+import Login from "./component/Login";
+import ProductList from "./component/PoductList";
+import Cart from "./component/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import SignUp from "./components/Signup";
+import SignUp from "./component/Signup";
+import Payment from "./component/Payment";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true");
   const [cart, setCart] = useState([]);
+  
+
+  const removeFromCart = (index) => {
+    const updatedCart = cart.filter((_, i) => i !== index);
+    setCart(updatedCart);
+  };
+
+  const cartTotal = cart.reduce((total, item) => total + item.price, 0);
 
   return (
     <Router>
@@ -24,7 +34,7 @@ function App() {
                 <Link className="nav-link" to="/products">Products</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/cart">Cart ({cart.length})</Link>
+                <Link className="nav-link" to="/cart">Cart({cart.length})</Link>
               </li>
             </ul>
           </div>
@@ -32,13 +42,29 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/products" element={<ProductList cart={cart} setCart={setCart} />} />
-        <Route path="/cart" element={<Cart cart={cart} />} />
+        <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+        <Route
+          path="/products"
+          element={<ProductList cart={cart} setCart={setCart} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
+        />
+        <Route
+          path="/cart"
+          element={<Cart cart={cart} removeFromCart={removeFromCart} isLoggedIn={isLoggedIn} />}
+        />
         <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/payment"
+          element={
+            <Payment
+              totalAmount={cartTotal}
+              cart={cart}
+              
+            />
+          }
+        />
       </Routes>
     </Router>
-  )
+  );
 }
 
 export default App;
