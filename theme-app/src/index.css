@@ -1,0 +1,92 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Light and Dark Theme */
+.light {
+  background: #ffffff;
+  color: #000000;
+}
+
+.dark {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #444;
+  color: white;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #777;
+  color: white;
+}
+
+/* Page Content */
+.content {
+  padding: 20px;
+  text-align: center;
+  height: 100vh;
+}
+
+/* Loading Animation */
+.loading {
+  text-align: center;
+  font-size: 20px;
+  margin: 20px;
+  animation: fadeIn 1s infinite alternate;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+.loading {
+  text-align: center;
+  font-size: 20px;
+  margin: 20px;
+  height: 100vh;
+  color: #e70e03;
+  animation: fadeIn 1s infinite alternate;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  height: 100vh;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+
+
