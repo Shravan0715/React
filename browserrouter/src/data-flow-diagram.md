@@ -71,3 +71,10 @@
 - URL-based component rendering
 - Consistent navigation interface
 - Error boundary implementation
+
+## Additional Notes
+- React Router v6 used for routing
+- React Router v6 provides a declarative API
+- React Router v6 is a popular choice for React apps
+- React Router v6 is actively maintained
+

@@ -67,3 +67,7 @@
 - Bidirectional data flow
 - Efficient state propagation
 
+## Additional Notes
+
+- React Context API used for state management
+

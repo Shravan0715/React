@@ -1,4 +1,4 @@
-**User Authentication System - Data Flow Diagram (DFD)**
+**User Authentication System (Retail App) - Data Flow Diagram (DFD)**
 
 ### **DFD Level 0 (Context Diagram)**
 - Shows high-level interaction between user, system, and database.
@@ -85,3 +85,11 @@
 - JWT token is cleared from local storage or HTTP-only cookie.
 - User session is ended.
 
+## **Additional Considerations**
+
+- **Security**: Use HTTPS for secure communication.
+- **Error Handling**: Handle errors gracefully and provide user-friendly messages.
+- **Performance**: Optimize database queries and minimize API calls.
+- **Testing**: Write unit and integration tests for critical components.
+
+---
